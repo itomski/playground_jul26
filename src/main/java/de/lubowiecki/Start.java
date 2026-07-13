@@ -66,5 +66,12 @@ public class Start {
         f1 = .5f; // 0.5f
         f1 = 1f; // 1.0f
 
+        double d5 = 10_00_00_00.15d;
+
+        int j = 'C';
+        System.out.println(j);
+        System.out.println((char)j);
+
+
     } // Ende des Programms
 }
