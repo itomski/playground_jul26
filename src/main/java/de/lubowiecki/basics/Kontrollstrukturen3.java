@@ -1,5 +1,7 @@
 package de.lubowiecki.basics;
 
+import java.util.Arrays;
+
 public class Kontrollstrukturen3 {
 
     public static void main(String[] args) {
@@ -32,8 +34,15 @@ public class Kontrollstrukturen3 {
 
         System.out.println();
 
-        for (String name : namen) {
+        for (String name : namen) { // Laufvariable muss in der Schleife deklariert werden
             System.out.println(name);
         }
+
+        System.out.println();
+
+        Arrays.stream(namen)
+                .forEach(n -> System.out.println(n));
+
+
     }
 }
