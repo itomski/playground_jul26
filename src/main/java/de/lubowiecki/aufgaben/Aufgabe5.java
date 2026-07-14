@@ -8,4 +8,7 @@ public class Aufgabe5 {
     Danach hat der User 4 Versuche Zeit die richtige Zahl durch Eingabe zu finden.
     Am Ende wird die Zufallszahl angezeigt ink. einer Meldung, ob sie gefunden wurde.
      */
+
+
+
 }
