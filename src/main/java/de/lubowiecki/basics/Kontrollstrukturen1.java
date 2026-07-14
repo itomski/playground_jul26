@@ -1,6 +1,6 @@
 package de.lubowiecki.basics;
 
-public class Kontrollstrukturen {
+public class Kontrollstrukturen1 {
 
     public static void main(String[] args) {
 
