@@ -1,5 +1,8 @@
 package de.lubowiecki.aufgaben;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class Aufgabe8 {
 
     /*
@@ -29,4 +32,31 @@ public class Aufgabe8 {
 
      */
 
+    public static void main(String[] args) {
+        System.out.println(DiceCup.roll());
+        System.out.println(DiceCup.roll());
+        System.out.println(DiceCup.roll());
+
+        System.out.println(Arrays.toString(DiceCup.roll(10)));
+        System.out.println(Arrays.toString(DiceCup.roll(20)));
+        System.out.println(Arrays.toString(DiceCup.roll(3)));
+    }
+
+}
+
+class DiceCup {
+
+    private static Random rand = new Random();
+
+    public static int roll() {
+        return rand.nextInt(1, 7);
+    }
+
+    public static int[] roll(int nr) {
+        int[] arr = new int[nr];
+        for (int i = 0; i < arr.length ; i++) {
+            arr[i] = roll();
+        }
+        return arr;
+    }
 }

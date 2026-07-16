@@ -1,5 +1,7 @@
 package de.lubowiecki.aufgaben;
 
+import de.lubowiecki.aufgaben.loesungen.a6.Rechner;
+
 public class Aufgabe9 {
 
     /*
@@ -14,4 +16,9 @@ public class Aufgabe9 {
     Beachte, dass der Preis, Erscheinungsjahr und Seitenanzahl nicht negativ sein dürfen.
     Auch der Titel und Autor sollen mind. 2 Zeichen lang sein.
     */
+
+    public static void main(String[] args) {
+
+        System.out.println(Rechner.add(10, 15));
+    }
 }
