@@ -18,4 +18,15 @@ public class Fahrzeug {
         this.modell = modell;
         this.baujahr = baujahr;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Fahrzeug{");
+        sb.append("kennzeichen='").append(kennzeichen).append('\'');
+        sb.append(", marke='").append(marke).append('\'');
+        sb.append(", modell='").append(modell).append('\'');
+        sb.append(", baujahr=").append(baujahr);
+        sb.append('}');
+        return sb.toString();
+    }
 }
