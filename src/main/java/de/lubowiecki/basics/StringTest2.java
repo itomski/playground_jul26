@@ -1,8 +1,8 @@
-package de.lubowiecki;
+package de.lubowiecki.basics;
 
 import java.util.Scanner;
 
-public class StringTest {
+public class StringTest2 {
 
     public static void main(String[] args) {
 
