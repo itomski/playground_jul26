@@ -13,5 +13,4 @@ public class Aufgabe25 {
 
     Baue zwei Roboter mit unterschiedlicher Modulbelegung und probiere ihn aus.
     */
-
 }
