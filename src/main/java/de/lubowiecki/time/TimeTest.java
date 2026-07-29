@@ -62,7 +62,15 @@ public class TimeTest {
         // Wird bei der Erzeugung gegen einen Kalender validiert
         // LocalDate ld2 = LocalDate.of(2015, 2, 30); // DateTimeException
 
+        System.out.println();
 
-
+        Year y =  Year.now();
+        System.out.println(y);
+        YearMonth ym =  YearMonth.now();
+        System.out.println(ym);
+        MonthDay md = MonthDay.now();
+        System.out.println(md);
+        Month m = Month.JULY;
+        System.out.println(m);
     }
 }

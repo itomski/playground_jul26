@@ -1,5 +1,9 @@
 package de.lubowiecki.aufgaben;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 public class Aufgabe26 {
 
     /*
@@ -11,4 +15,14 @@ public class Aufgabe26 {
     Erzeuge ein zweites LocalDate und errechne danach den Abstand in Tagen zwischen beiden.
      */
 
+    public static void main(String[] args) {
+
+        LocalDate now = LocalDate.now();
+        LocalDate later = LocalDate.now().plusDays(250);
+        long days = Duration.between(now.atStartOfDay(), later.atStartOfDay()).toDays();
+        System.out.println(days);
+
+        days = now.until(later, ChronoUnit.DAYS);
+        System.out.println(days);
+    }
 }
