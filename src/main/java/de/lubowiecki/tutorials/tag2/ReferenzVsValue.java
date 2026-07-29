@@ -1,4 +1,4 @@
-package de.lubowiecki.tutorial.tag2;
+package de.lubowiecki.tutorials.tag2;
 
 public class ReferenzVsValue {
 
