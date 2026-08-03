@@ -6,23 +6,25 @@ import java.util.List;
 
 public class PersonRepository {
 
-    private static final String URL = "jdbc:sqlite:data.db";
-
     private static final String TABLE = "personen";
 
     public static boolean update(int id, String vorname, String nachname) throws SQLException {
 
-        try(Connection connection = DriverManager.getConnection(URL);
-            Statement stmt = connection.createStatement()) {
+        final String SQL = "UPDATE " + TABLE + " SET vorname = ?, nachname = ? WHERE id = ?";
 
-            final String SQL = "UPDATE " + TABLE + " SET vorname = '" + vorname + "', nachname = '" + nachname + "' WHERE id = " + id;
-            return stmt.executeUpdate(SQL) > 0;
+        try(Connection connection = DBUtils.getConnection();
+            PreparedStatement stmt = connection.prepareStatement(SQL)) {
+
+            stmt.setString(1, vorname);
+            stmt.setString(2, nachname);
+            stmt.setInt(3, id);
+            return stmt.executeUpdate() > 0;
         }
     }
 
     public static boolean delete(int id) throws SQLException {
 
-        try(Connection connection = DriverManager.getConnection(URL);
+        try(Connection connection = DBUtils.getConnection();
             Statement stmt = connection.createStatement()) {
 
             return stmt.executeUpdate("DELETE FROM " + TABLE + " WHERE  id = " + id) == 1;
@@ -31,7 +33,7 @@ public class PersonRepository {
 
     public static List<Person> findAll() throws SQLException {
 
-        try(Connection connection = DriverManager.getConnection(URL);
+        try(Connection connection = DBUtils.getConnection();
             Statement stmt = connection.createStatement()) {
 
             ResultSet results = stmt.executeQuery("SELECT * FROM " + TABLE);
@@ -52,16 +54,20 @@ public class PersonRepository {
     }
 
     public static boolean insert(String vorname, String nachname) throws SQLException {
-        try(Connection connection = DriverManager.getConnection(URL);
-            Statement stmt = connection.createStatement()) {
 
-            final String SQL = "INSERT INTO " + TABLE + " (id, vorname, nachname) VALUES(NULL, '" + vorname + "', '" + nachname + "')";
-            return stmt.executeUpdate(SQL) > 0;
+        final String SQL = "INSERT INTO " + TABLE + " (id, vorname, nachname) VALUES(NULL, ?, ?)";
+
+        try(Connection connection = DBUtils.getConnection();
+            PreparedStatement stmt = connection.prepareStatement(SQL)) {
+
+            stmt.setString(1, vorname);
+            stmt.setString(2, nachname);
+            return stmt.executeUpdate() > 0;
         }
     }
 
     public static void createTable() throws SQLException {
-        try(Connection connection = DriverManager.getConnection(URL);
+        try(Connection connection = DBUtils.getConnection();
             Statement stmt = connection.createStatement()) { // Verbindung aufbauen
 
             final String SQL = "CREATE TABLE IF NOT EXISTS " + TABLE + " (" +

@@ -23,6 +23,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>de.lubowiecki.shopping</groupId>
+            <artifactId>orm</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>
