@@ -4,6 +4,7 @@ public class Aufgabe32 {
 
     /*
     Schreibe für jedes der nachfolgenden FunctionalInterfaces 3 Implementierungen
+    Teste sie
     */
 
 }
