@@ -15,7 +15,7 @@ public class Aufgabe33 {
     DoubleUnaryOperator
     LongSupplier
     IntPredicate
-    IntToDoubleFunction (primitiv int zu primitiv double)
+    IntToDoubleFunction (primitiv int zu primitiv double)...
      */
 
 }
