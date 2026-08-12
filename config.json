@@ -1,0 +1,7 @@
+{
+  "user": "admin",
+  "password": "geheim",
+  "host": "localhost",
+  "port": "3306",
+  "driver": "SQLite"
+}
